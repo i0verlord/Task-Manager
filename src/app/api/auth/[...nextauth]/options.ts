@@ -9,4 +9,4 @@ export const options: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_URL,
-}
+};
