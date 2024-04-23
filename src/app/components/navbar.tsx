@@ -1,4 +1,12 @@
+"use client";
+
+import Dropdown from "./dropdown";
+import { useState } from "react";
+
 export default function Navbar() {
+
+  const [show, setShow] = useState<boolean>(false);
+
   return(
     <nav className="bg-white border flex h-24">
       <div className="flex-none w-[18.75rem] border-r-2 flex items-center pl-[2.12rem]">
@@ -19,9 +27,12 @@ export default function Navbar() {
             </p>
           </button>
           <div className="flex items-center">
-            <button className="text-3xl mb-4">
+            <button 
+            onClick={() => setShow(!show)}
+            className="text-3xl mb-4">
               ...
             </button>
+            <Dropdown show={show} />
           </div>
         </div>
       </div>
